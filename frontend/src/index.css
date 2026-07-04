@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(
+        circle at top,
+        #172554 0%,
+        #0F172A 35%,
+        #0B1020 70%,
+        #080C18 100%
+    );
+}
+.app.loading{
+    opacity: 0.35;
+    filter: blur(3px);
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+
+.head{
+  background: linear-gradient(
+    90deg,
+    #712c9e 30%,
+    #1abbd7 40%,
+    #373f96 70%
+);
+-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+.para{
+  text-align: center;
+  color: wheat;
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+}
+.flex{
+  display: flex;
+}
+.gr{
+  color: rgb(173, 168, 168);
+}
+
+.cnt{
+  justify-content: center;
+  align-items: center;
+}
+.gap{
+  column-gap: 15rem;
+  row-gap: 0;
+}
+.txt-cnt{
+  text-align: center;
+}
+.gapx{
+  gap: 57.5rem;
+}
+.bld{
+  font-weight: bolder;
+}
+.rel{
+  position: relative;
+}
+.m-left{
+  margin-left: 5rem;
+}
+.m-lt{
+  margin-left: 2rem;
+}
+.m-top{
+  margin-top: 0.3rem;
+}
+.m-lt2{
+  margin-left: 0.7rem;
+}
+.red{
+  background-color: red;
+}
+.f-size{
+  font-size: 1.1rem;
+
+}
+.f-sz{
+  
+  
+  font-size: 1.9rem;
+
+}
+.m-lt4{
+  margin-left: 10rem;
+  margin-top: 0;
+  overflow: hidden;
+}
+.m-bt{
+  margin-bottom: 1rem;
+}
+.m-0{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ht{
+  height: 1.7rem;
+}
+.ht-wd{
+  height: 2rem;
+  width: 12rem;
+}
+.wh{
+  color: white;
+}
+.fnt{
+  font-family: 'Poppins', sans-serif;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+
+/*input*/
+.input{
+  border: solid 1px grey;
+  box-shadow:
+        0 6px 20px rgba(6, 6, 108, 0.35),
+        0 2px 10px rgba(59,130,246,0.25);
+  height: 12rem;
+  width: 82rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+input, select{
+    width: 220px;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    background: rgb(231, 235, 239);
+    color: rgb(45, 43, 43);
+    font-size: 16px;
+    outline: none;
+    transition: .3s;
+}
+.in{
+  
+  margin-bottom: 0;
+}
+.bt{
+  margin-top: 1.8rem;
+  height: 3rem;
+  width: 82rem;
+  
+  
+}
+.btn{
+    height: 3rem;
+    width: 20rem;
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    background: linear-gradient(    90deg,    #A855F7 0%,    #8B5CF6 50%,    #3B82F6 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+}
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 8px 20px rgba(168, 85, 247, 0.35);
+  cursor: pointer;
+}
+.icon{
+  background-color: #712c9e;
+}
+.error{
+    color:#ef4444;
+    font-size:0.9rem;
+    margin-top:6px;
+    margin-bottom:0;
+}
+
+/*Output*/
+.out-hd{
+  margin-left: 7rem;
+}
+.output{
+  
+ 
+  width: 82rem;
+  border-radius: 5px;
+  margin: 2rem auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.srt{
+  border-radius: solid 2px gray;
+  -webkit-border-radius: solid 2px gray;
+  -moz-border-radius: solid 2px gray;
+  -ms-border-radius: solid 2px gray;
+  -o-border-radius: solid 2px gray;
+}
+
+.lp{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/*LaptopCard*/
+.lap-card{
+  margin-left: 1rem;
+  border: solid 2px rgb(83, 83, 86);
+  box-shadow:
+        0 3px 20px rgba(117, 73, 218, 0.35),
+        0 2px 10px rgba(2, 12, 30, 0.25);
+  height: 19rem;
+  flex-shrink: 0;
+  width: 15rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+.ht-img{
+    width:100%;
+    height:10rem;
+    object-fit:contain;
+}
+.price{
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(89, 238, 89);
+  font-weight: bold;
+  margin-left: 0.7rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.stars{
+    font-weight: bold;
+    background: linear-gradient(180deg, #FFE66D 0%, #FFD700 50%, #E6B800 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.loader { 
+  width: clamp(32px, 6vw, 50px);
+  height: clamp(32px, 6vw, 50px); 
+  border-radius: 50%;
+   background: conic-gradient( from 0deg, #A855F7 0%, #8B5CF6 50%, #3B82F6 100% );
+    animation: spin 1s linear infinite; margin: 20px auto; position: relative; 
+  } 
+.loader::before { 
+  content: ""; position: absolute;
+   inset: 6px; background: #111; 
+   border-radius: 50%; 
+  }
+ @keyframes spin {
+   to { transform: rotate(360deg); } 
+  }
+@media (max-width: 768px){
+  .gap{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+    }
+   
+    .m-left,
+    .m-let{
+        margin-left: 0;
+    }
+    input,
+select{
+    width: 280px;
+}
+.wrap{
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.input{
+  border: none;
+  box-shadow:       none;
+  height: 0rem;
+  width: 0;
+  border-radius: rem;
+  margin-top: 13rem;
+}
+.ht{
+  height: 2rem;
+  width: 10rem;
+}
+.flex{
+  flex-direction: column;
+  
+  height: 0;
+  width: 0;
+
+}
+.lp{
+  margin-top: 20rem;
+  gap: 2rem;
+  
+}
+.lap-card{
+  width: 34rem;
+}
+.med{
+  position: absolute;
+  left: 6rem;
+}
+.f-sz{
+  position: absolute;
+  top: 10.9rem;
+  left: 1rem;
+  font-size: 2.6rem;
+}
+.stars{
+  position: absolute;
+  left: 20rem ;
+}
+.loader {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 18rem;
+    left: 17rem;
+  }
+
+  .loader::before {
+    inset: 5px;
+  }
+  .out-hd{
+    position: absolute;
+    margin-left: 0.5rem;
+    top: 38rem;
+  }
+
+
+
+
+}
