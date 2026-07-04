@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from image_search import get_image, clear_old_images
 from flask_cors import CORS
+import os
 import time
 from recommendation import recommend_laptops
 
@@ -37,4 +38,7 @@ def recommend():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
