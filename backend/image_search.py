@@ -24,7 +24,7 @@ def get_image(laptop_name):
 
     # Agar image pehle se download hai
     if os.path.exists(filepath):
-        return f"http://127.0.0.1:5000/static/images/{filename}"
+        return f"https://laptop-recommendation-api.onrender.com/static/images/{filename}"
 
     with DDGS() as ddgs:
      results = list(
@@ -40,13 +40,16 @@ def get_image(laptop_name):
     image_url = results[0]["image"]
 
     try:
-        response = requests.get(image_url, timeout=10)
+        headers = {
+        "User-Agent": "Mozilla/5.0"
+        }
+        response = requests.get(image_url, timeout=10,headers=headers)
 
         if response.status_code == 200:
             with open(filepath, "wb") as f:
                 f.write(response.content)
 
-            return f"http://127.0.0.1:5000/static/images/{filename}"
+            return f"https://laptop-recommendation-api.onrender.com/static/images/{filename}"
 
     except Exception as e:
         print(e)

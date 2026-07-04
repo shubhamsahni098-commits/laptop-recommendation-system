@@ -10,7 +10,7 @@ export default function Input(props) {
       <div className='input flex wrap gap'>
         <div className='m-left in'>
             <h5 className='f-size fnt m-bt wh'>Budget (₹)</h5>
-            <label>₹</label>
+            
             <input
              className='ht'
              type="number"
@@ -27,7 +27,7 @@ export default function Input(props) {
         </div>
         <div className='m-let in'>
             <h5 className='f-size fnt m-bt wh'>Primary Use</h5>
-            <label></label>
+          
             <select
              className='ht-wd'
              value={props.primaryUse}
@@ -45,7 +45,7 @@ export default function Input(props) {
         </div>
         <div className='m-let in'>
             <h5 className='f-size m-bt fnt wh '>Secondary Use (Optional)</h5>
-            <label></label>
+            
             <select
              className='ht-wd'
              value={props.secondaryUse}

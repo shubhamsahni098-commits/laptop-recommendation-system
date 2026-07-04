@@ -17,8 +17,13 @@ export default function LaptopCards(props) {
         <p className='m-0 m-lt2 gr'>{props.laptop.memory}</p>
         <p className='m-0 m-lt2 gr'>{props.laptop.graphics}</p>
       </div>
-        <p className='price rel'>₹{props.laptop.price.toLocaleString("en-IN")}</p>
-        <p className='ht f-size m-0 m-lt4 stars'>★★★★★</p> 
+        <div className="price-row">
+          <p className="price">
+            ₹{props.laptop.price.toLocaleString("en-IN")}
+         </p>
+
+          <p className="stars">★★★★★</p>
+        </div>
     </div>
     
     
