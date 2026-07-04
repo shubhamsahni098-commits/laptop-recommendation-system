@@ -41,7 +41,7 @@ export default function App() {
     
     try {
         setLoading(true);
-        const response = await fetch("http://127.0.0.1:5000/recommend", {
+        const response = await fetch("https://laptop-recommendation-api.onrender.com/recommend", {
 
             method: "POST",
 
