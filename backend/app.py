@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from image_search import get_image, clear_old_images
+from image_search import get_image
 from flask_cors import CORS
 import os
 import time
@@ -24,15 +24,15 @@ def recommend():
     primary_use = data["primary_use"]
     secondary_use = data.get("secondary_use")
 
-    clear_old_images()
     result = recommend_laptops(
         budget,
         primary_use,
         secondary_use
     )
+
     if isinstance(result, list):
-     for laptop in result:
-        laptop["image"] = get_image(laptop["name"])
+        for laptop in result:
+            laptop["image"] = get_image(laptop["name"])
 
     return jsonify(result)
 
