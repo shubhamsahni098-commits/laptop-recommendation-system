@@ -1,5 +1,4 @@
-
-import React ,{useState} from 'react'
+import React, { useState, useRef, useEffect } from "react";
 import './index.css'
 import Input from './Input'
 import Output from './Output'
@@ -14,6 +13,15 @@ export default function App() {
   const [budgetError, setBudgetError] = useState("");
   const [primaryError, setPrimaryError] = useState("");
   const [secondaryError, setSecondaryError] = useState("");
+  const outputRef = useRef(null);
+  useEffect(() => {
+           if (loading) {
+             outputRef.current?.scrollIntoView({
+             behavior: "smooth",
+             block: "start",
+              });
+            }
+        }, [loading]);
 
   const getRecommendations = async () => {
     setBudgetError("");
@@ -27,7 +35,10 @@ export default function App() {
         valid = false;
     }
     else if (Number(budget) < 10000 || Number(budget) > 300000) {
-        setBudgetError("*Budget must be between ₹10,000 and ₹3,00,000.");
+        setBudgetError(<>
+          *Budget must be between <br />
+           ₹10,000 and ₹3,00,000.
+         </>);
         valid = false;
     }
 
@@ -41,6 +52,7 @@ export default function App() {
     
     try {
         setLoading(true);
+        
         const response = await fetch("https://laptop-recommendation-api.onrender.com/recommend", {
 
             method: "POST",
@@ -114,8 +126,9 @@ export default function App() {
      <p className='f-sz wh bld m-0 out-hd '>Top 5 Recommended Laptops</p>
      :null
     }
-     
-      <Output laptops={laptops} loading={loading}/>
+      <div ref={outputRef}>
+       <Output laptops={laptops} loading={loading}/>
+       </div>
       </div>
 
      </div> 
