@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from recommendation import recommend_laptops
 import os
 import time
-from recommendation import recommend_laptops
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -38,8 +39,11 @@ def recommend():
     )
 
     if isinstance(result, list):
+        images = IMAGES.copy()
+        random.shuffle(images)
+
         for i, laptop in enumerate(result):
-            laptop["image"] = IMAGES[i % len(IMAGES)]
+            laptop["image"] = images[i % len(images)]
 
     return jsonify(result)
 

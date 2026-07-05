@@ -1,12 +1,12 @@
 import React from 'react'
-import lp from './assets/lp.png';
+
 import './index.css'
 
 export default function LaptopCards(props) {
   return (
     <>
     <div className='lap-card'>
-      <img className='ht-img ' src={props.laptop.image || lp} alt={props.laptop.name}
+      <img className='ht-img ' src={props.laptop.image} alt={props.laptop.name}
        onError={(e) => {
       e.target.onerror = null;
      e.target.src = lp;
