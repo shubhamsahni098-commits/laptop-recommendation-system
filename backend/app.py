@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from image_search import get_image
 from flask_cors import CORS
 import os
 import time
@@ -7,6 +6,14 @@ from recommendation import recommend_laptops
 
 app = Flask(__name__)
 CORS(app)
+
+IMAGES = [
+    "https://laptop-recommendation-api.onrender.com/static/images/laptop1.png",
+    "https://laptop-recommendation-api.onrender.com/static/images/laptop2.png",
+    "https://laptop-recommendation-api.onrender.com/static/images/laptop3.png",
+    "https://laptop-recommendation-api.onrender.com/static/images/laptop4.png",
+    "https://laptop-recommendation-api.onrender.com/static/images/laptop5.png",
+]
 
 
 @app.route("/")
@@ -31,8 +38,8 @@ def recommend():
     )
 
     if isinstance(result, list):
-        for laptop in result:
-            laptop["image"] = get_image(laptop["name"])
+        for i, laptop in enumerate(result):
+            laptop["image"] = IMAGES[i % len(IMAGES)]
 
     return jsonify(result)
 
