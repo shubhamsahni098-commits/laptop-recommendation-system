@@ -82,6 +82,7 @@ export default function App() {
 
   return (
     <>
+    <div className='main'>
      <div className={loading ? "app loading" : "app"}>
       <h1 className='head'>Laptop Recommendation System</h1>
       <p className='para'>Get the best Laptops based on your budget and requirements</p>
@@ -99,12 +100,25 @@ export default function App() {
       setBudgetError={setBudgetError}
       primaryError={primaryError}
      />
+     </div>
+     {loading &&(
+      <>
+     <div className="loader"></div>
+     <p className="txt-cnt wh price-note">
+      Prices are subject to change. Please verify before purchasing
+    </p>
+      </> 
+     )} 
+     <div className={loading ? "app loading" : "app"}>
      {laptops.length>0?
      <p className='f-sz wh bld m-0 out-hd '>Top 5 Recommended Laptops</p>
      :null
     }
-     </div>
+     
       <Output laptops={laptops} loading={loading}/>
+      </div>
+
+     </div> 
       
     </>
   )

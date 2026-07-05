@@ -21,14 +21,32 @@ def get_image(laptop_name):
         results = list(
             ddgs.images(
                 f"{laptop_name} laptop",
-                max_results=1
+                max_results=5
             )
         )
 
     if not results:
         return None
 
-    image_url = results[0]["image"]
+    image_url = None
+
+    for result in results:
+        title = result.get("title", "").lower()
+        url = result.get("image", "").lower()
+
+        bad_words = [
+        "wallpaper", "person", "people", "anime",
+        "logo", "icon", "avatar", "pumpkin"
+        ]
+
+        if any(word in title or word in url for word in bad_words):
+          continue
+
+        image_url = result["image"]
+        break
+
+    if image_url is None:
+       image_url = results[0]["image"]
 
     try:
         headers = {

@@ -47,7 +47,7 @@ export default function Input(props) {
             <h5 className='f-size m-bt fnt wh '>Secondary Use (Optional)</h5>
             
             <select
-             className='ht-wd'
+             className='ht-wd2'
              value={props.secondaryUse}
              onChange={(e) => props.setSecondaryUse(e.target.value)}
              >

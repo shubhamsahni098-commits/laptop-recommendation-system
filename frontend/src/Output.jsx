@@ -11,20 +11,18 @@ export default function Output(props) {
             <p className='f-sz wh bld m-0 txt-und '>Top 5 Recommended Laptops</p>):null}
             
         </div>*/}
+          
         
         
-        {props.loading ? (
-          <>
-           <div className="loader"></div>
-           <p className=' txt-cnt wh m-top med'>Prices are subject to change. Please verify before purchasing</p>
-          </> 
-         ) : props.laptops.length > 0 ? (
+           
+          
           <div className="lp flex">
            {props.laptops.map((laptop, index) => (
             <LaptopCards key={index} laptop={laptop} />
          ))}
         </div>
-        ) : null}
+        
+         
         
         
       </div>
